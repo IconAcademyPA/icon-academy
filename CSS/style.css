@@ -186,6 +186,8 @@ header.scrolled .nav-links a{
 
     overflow:hidden;
 
+    padding: 10px;
+
 }
 
 .overlay{
@@ -194,7 +196,10 @@ header.scrolled .nav-links a{
 
     inset:0;
 
-    background-color: var(--black);
+    background:var(--black);
+
+    background-image: url(/assets/estrellas.png);
+
 }
 
 .hero-content{
@@ -209,7 +214,6 @@ header.scrolled .nav-links a{
 
     color:white;
 
-    padding:20px;
 
 }
 
@@ -260,6 +264,8 @@ header.scrolled .nav-links a{
 
     flex-wrap:wrap;
 
+    margin-top:30px;
+
 }
 
 
@@ -275,7 +281,7 @@ header.scrolled .nav-links a{
 
     grid-template-columns:
     1fr
-    500px;
+    100%;
 
     align-items:center;
 
@@ -291,15 +297,21 @@ header.scrolled .nav-links a{
 
     max-width:650px;
 
+    width:400px;
+
+    height:100evh;
+
     color:white;
 
-    margin-top: -105px;
+    margin-top: 40px;
+
+    
 
 }
 
 .hero-left h1{
 
-    font-size:4rem;
+    font-size:2rem;
 
     line-height:1.1;
 
@@ -309,7 +321,7 @@ header.scrolled .nav-links a{
 
 .hero-left p{
 
-    font-size:1.2rem;
+    font-size:1rem;
 
     line-height:1.7;
 
@@ -323,16 +335,25 @@ header.scrolled .nav-links a{
 
     justify-content:center;
 
+    height:100%;
+
+    width:100%;
+
     margin-top: -50px;
+
+   
 }
 
-.hero-model img{
+.hero-model video{
 
-    max-height:750px;
+    max-height:800px;
+
+    max-width:800px;
 
     object-fit:contain;
 
-    margin-left: -300px;
+    margin-left: -200px;
+
 
 }
 
@@ -1264,8 +1285,8 @@ footer h3{
 
     background:linear-gradient(
         135deg,
-        #caa22f,
-        #d9b548
+        #f121c0,
+        #ce05a3
     );
 
     border-radius:20px;
@@ -1273,9 +1294,7 @@ footer h3{
     display:grid;
 
     grid-template-columns:
-    1.2fr
-    1fr
-    1fr;
+    1.2fr;
 
     gap:30px;
 
@@ -1284,6 +1303,7 @@ footer h3{
     color:white;
 
     align-items:center;
+    text-align:center;
 
 }
 
@@ -1327,17 +1347,13 @@ footer h3{
 
 }
 
-.opening-includes h4{
+.include-items img{
 
-    margin-bottom:20px;
+    width:100%;
 
-}
+    border-radius:15px;
 
-.include-items{
-
-    display:flex;
-
-    gap:20px;
+    box-shadow:var(--shadow);
 
 }
 
