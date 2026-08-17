@@ -62,7 +62,12 @@
 
     <section id="inicio" class="hero">
 
-       <div class="overlay"></div>
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+            aria-label="Alumnas de Icon Academy durante sus actividades">
+            <source src="assets/VID-20260808-WA0109(1).mp4" type="video/mp4">
+        </video>
+
+        <div class="overlay"></div>
 
         <div class="hero-container">
 
@@ -98,15 +103,6 @@
 
             </div>
 
-            <!-- MODELO -->
-
-            <div class="hero-model">
-                <video autoplay loop>
-                    <source src="assets/gallery/video.mp4" type="video/mp4">
-                </video>
-
-            </div>
-
             <!-- PROMOCION 
 
             <div class="hero-offer">
@@ -132,6 +128,12 @@
             </div>-->
 
         </div>
+
+        <button class="video-sound" type="button" aria-label="Activar sonido del video"
+            aria-pressed="false">
+            <i class="fas fa-volume-xmark" aria-hidden="true"></i>
+            <span>Activar sonido</span>
+        </button>
     </section>
 
     <!-- ¿QUÉ OFRECEMOS -->

@@ -163,8 +163,9 @@ window.addEventListener("scroll", () => {
 
     let offset = window.pageYOffset;
 
-    hero.style.backgroundPositionY =
-    offset * 0.5 + "px";
+    if(hero){
+        hero.style.setProperty("--scroll-offset", offset * 0.5 + "px");
+    }
 
 });
 
@@ -252,6 +253,14 @@ setInterval(() => {
 const targetDate =
 new Date("June 16, 2026 23:59:59").getTime();
 
+const countdownFields = {
+    days: document.getElementById("days"),
+    hours: document.getElementById("hours"),
+    minutes: document.getElementById("minutes"),
+    seconds: document.getElementById("seconds")
+};
+
+if(Object.values(countdownFields).every(Boolean)){
 setInterval(() => {
 
     const now = new Date().getTime();
@@ -283,16 +292,36 @@ setInterval(() => {
         1000
     );
 
-    document.getElementById("days").innerText =
-    days;
+    countdownFields.days.innerText = days;
 
-    document.getElementById("hours").innerText =
-    hours;
+    countdownFields.hours.innerText = hours;
 
-    document.getElementById("minutes").innerText =
-    minutes;
+    countdownFields.minutes.innerText = minutes;
 
-    document.getElementById("seconds").innerText =
-    seconds;
+    countdownFields.seconds.innerText = seconds;
 
 },1000);
+}
+
+/* =====================================
+   HERO VIDEO SOUND
+===================================== */
+
+const heroVideo = document.querySelector(".hero-video");
+const soundButton = document.querySelector(".video-sound");
+
+if(heroVideo && soundButton){
+    soundButton.addEventListener("click", () => {
+        heroVideo.muted = !heroVideo.muted;
+
+        soundButton.setAttribute("aria-pressed", String(!heroVideo.muted));
+        soundButton.setAttribute(
+            "aria-label",
+            heroVideo.muted ? "Activar sonido del video" : "Silenciar video"
+        );
+
+        soundButton.innerHTML = heroVideo.muted
+            ? '<i class="fas fa-volume-xmark" aria-hidden="true"></i><span>Activar sonido</span>'
+            : '<i class="fas fa-volume-high" aria-hidden="true"></i><span>Silenciar</span>';
+    });
+}

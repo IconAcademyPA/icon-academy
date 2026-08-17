@@ -37,6 +37,7 @@
 
 html{
     scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
 body{
@@ -186,7 +187,23 @@ header.scrolled .nav-links a{
 
     overflow:hidden;
 
-    padding: 10px;
+    padding:100px 30px 50px;
+
+    background:#111;
+
+}
+
+.hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
 
 }
 
@@ -196,9 +213,9 @@ header.scrolled .nav-links a{
 
     inset:0;
 
-    background:var(--black);
+    background:linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.45) 52%, rgba(0,0,0,.22) 100%);
 
-    background-image: url(/assets/estrellas.png);
+    z-index:1;
 
 }
 
@@ -279,9 +296,7 @@ header.scrolled .nav-links a{
 
     display:grid;
 
-    grid-template-columns:
-    1fr
-    100%;
+    grid-template-columns:minmax(0, 650px) 1fr;
 
     align-items:center;
 
@@ -289,7 +304,7 @@ header.scrolled .nav-links a{
 
     z-index:5;
 
-    padding:120px 50px;
+    padding:40px 20px;
 
 }
 
@@ -297,15 +312,58 @@ header.scrolled .nav-links a{
 
     max-width:650px;
 
-    width:400px;
-
-    height:100evh;
+    width:100%;
 
     color:white;
 
     margin-top: 40px;
 
     
+
+}
+
+.video-sound{
+
+    position:absolute;
+
+    right:30px;
+
+    bottom:30px;
+
+    z-index:6;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 18px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    border-radius:999px;
+
+    background:rgba(0,0,0,.42);
+
+    color:white;
+
+    font:inherit;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.video-sound:hover,
+.video-sound:focus-visible{
+
+    background:rgba(0,0,0,.7);
+
+    outline:2px solid white;
+
+    outline-offset:2px;
 
 }
 
